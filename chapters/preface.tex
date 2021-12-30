@@ -1,47 +1,31 @@
 \chapter*{Preface}\label{preface}
 % https://tex.stackexchange.com/questions/45672/adding-numberless-chapters-to-the-table-of-contents
 \addcontentsline{toc}{chapter}{\protect\numberline{}Preface}
-Modelica is a freely available, object-oriented language for modeling of
-large, complex, and heterogeneous physical systems. From a user's point
-of view, models are described by schematics, also called object
-diagrams. Examples are shown below:
+Modelica是一种免费的面向对象语言，用于对大型、复杂和异构的物理系统进行建模。
+从用户的角度来看，模型是由原理图描述的，也称为对象图。
+示例如下:
 \begin{center}
 \includegraphics[width=0.95\textwidth]{diagram_examples}
 \end{center}
 
-A schematic consists of connected components, like a resistor, or a
-hydraulic cylinder. A component has \emph{connectors} (often also called
-\emph{ports}) that describe the interaction possibilities, e.g., an
-electrical pin, a mechanical flange, or an input signal. By drawing
-connection lines between connectors a physical system or block diagram
-model is constructed. Internally a component is defined by another
-schematic, or on ``bottom'' level, by an equation-based description of
-the model in Modelica syntax.
+原理图由连接的部件组成，如电阻器或液压缸。
+部件包括\emph{connectors} (通常也被称为\emph{ports})，其描述了交互的可能性，例如，电气引脚、机械法兰或输入信号。 
+通过绘制连接器之间的连接线，可以构造物理系统或框图模型。
+在内部，组件由另一个原理图定义，或者在``底层''，由Modelica语法中基于方程的模型描述定义。
 
-The Modelica language is a textual description to define all parts of a
-model and to structure model components in libraries, called packages.
-An appropriate Modelica simulation environment is needed to graphically
-edit and browse a Modelica model (by interpreting the information
-defining a Modelica model) and to perform model simulations and other
-analysis. Information about such environments is available at
-\url{https://modelica.org/tools}. Basically,
-all Modelica language elements are mapped to differential, algebraic and
-discrete equations. There are no language elements to describe directly
-partial differential equations, although some types of discretized
-partial differential equations can be reasonably defined, e.g., based on
-the finite volume method and there are Modelica libraries to import
-results of finite-element programs.
+Modelica语言是一种文本描述，用于定义模型的所有部分，并在称为包的库中构造模型组件。
+需要适当的Modelica模拟环境以图形化方式编辑和浏览Modelica模型(通过解释定义Modelica模型的信息)，并执行模型模拟和其他分析。
+有关此类环境的信息可在\url{https://modelica.org/tools}找到。
+基本上，所有Modelica语言元素都映射到微分方程、代数方程和离散方程。
+虽然可以合理地定义某些类型的离散偏微分方程，例如，基于有限体积法，并且有Modelica库可以导入有限元程序的结果，但是没有语言元素可以直接描述偏微分方程。
 
-This document defines the details of the Modelica language. It is not
-intended to learn the Modelica language with this text. There are better
-alternatives, such as the Modelica books referenced at
-\url{https://modelica.org/publications}.
-This specification is used by computer scientist to implement a Modelica
-translator and by modelers who want to understand the exact details of a
-particular language element.
+本文档定义了Modelica语言的细节。
+本文并不是为了学习Modelica语言。
+还有更好的替代方案，如\url{https://modelica.org/publications}上的Modelica参考书籍。
+该规范被计算机科学家用来实现Modelica翻译程序，也被那些想要了解特定语言元素的精确细节的建模人员所使用。
 
-The text directly under the chapter headings are non-normative introductions to the chapters.
+直接在章节标题下的文本是章节的非规范介绍。
 
-The Modelica language has been developed since 1996.
-This document describes version \mlsversion{} of the Modelica language.
-The revision history is available in \cref{modelica-revision-history}.
+Modelica语言自1996年开始开发。
+本文档描述了Modelica语言的版本\mlsversion{} 。
+修订历史可以在\cref{modelica-revision-history}中找到。

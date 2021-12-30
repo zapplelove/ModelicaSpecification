@@ -1,60 +1,60 @@
-\chapter{Introduction}\label{introduction1}
+\chapter{简介}\label{introduction1}
 
-\section{Overview of Modelica}\label{overview-of-modelica}
+\section{Modelica概述}\label{overview-of-modelica}
 
-Modelica is a language for modeling of cyber-physical systems, supporting acausal connection of components governed by mathematical equations to facilitate modeling from first principles.
-It provides object-oriented constructs that facilitate reuse of models, and can be used conveniently for modeling complex systems containing, e.g., mechanical, electrical, electronic, magnetic, hydraulic, thermal, control, electric power or process-oriented subcomponents.
+Modelica是一种用于信息物理系统建模的语言，支持由数学方程控制的组件之间的因果联系，以促进从基本原理建模。
+它提供了面向对象的结构，便于模型的重用，并且可以方便地用于复杂系统的建模，包括机械、电气、电子、磁性、液压、热、控制、电力或面向过程的子组件。
 
-\section{Scope of the Specification}\label{scope-of-the-specification}
+\section{规范范围}\label{scope-of-the-specification}
 
-The semantics of the Modelica language is specified by means of a set of rules for translating any class described in the Modelica language to a flat Modelica structure.
-The semantic specification should be read together with the Modelica grammar.
+Modelica语言的语义是通过一组规则来指定的，这些规则用于将Modelica语言中描述的任何类转换为扁平的Modelica结构。
+语义规范应该与Modelica语法一起阅读。
 
-A class (of specialized class \lstinline!model!, \lstinline!class! or \lstinline!block!) intended to be simulated on its own is called a \firstuse{simulation model}.
+旨在自行模拟的类 (of specialized class \lstinline!model!, \lstinline!class! or \lstinline!block!) 称为 \firstuse{模拟模型}。
 
-The flat Modelica structure is also defined for other cases than simulation models; including functions (can be used to provide algorithmic contents), packages (used as a structuring mechanism), and partial models (used as base-models).
-This allows correctness to be verified for those classes, before using them to build the simulation model.
+扁平的Modelica结构也被定义用于仿真模型以外的其他情况;包括函数(可用于提供算法内容)、包(用作结构机制)和部分模型(用作基础模型)。
+这允许在使用这些类构建仿真模型之前验证它们的正确性。
 
-There are specific semantic restrictions for a simulation model to ensure that the model is complete; they allow its flat Modelica structure to be further transformed into a set of differential, algebraic and discrete equations (= flat hybrid DAE).
-Note that satisfying the semantic restrictions does not guarantee that the model can be initialized from the initial conditions and simulated.
+仿真模型有特定的语义限制，以确保模型的完整性;它们允许其平坦的Modelica结构进一步转化为一组微分、代数和离散方程(=平坦混合DAE)。
+请注意，满足语义限制并不保证模型可以从初始条件初始化和模拟。
 
-Modelica was designed to facilitate symbolic transformations of models, especially by mapping basically every Modelica language construct to equations in the flat Modelica structure.
-Many Modelica models, especially in the associated Modelica Standard Library, are higher index systems, and can only be reasonably simulated if symbolic index reduction is performed, i.e., equations are differentiated and appropriate variables are selected as states, so that the resulting system of equations can be transformed to state space form (at least locally numerically), i.e., a hybrid DAE of index zero.
-In order to allow this structural analysis, a tool may reject simulating a model if parameters cannot be evaluated during translation -- due to calls of external functions or initial equations/initial algorithms for \lstinline!fixed = false! parameters.
-Accepting such models is a quality of implementation issue.
-The Modelica specification does not define how to simulate a model.
-However, it defines a set of equations that the simulation result should satisfy as well as possible.
+Modelica的设计是为了促进模型的符号转换，特别是通过将基本上每一种Modelica语言构造映射到平面Modelica结构中的方程。
+许多Modelica模型，特别是在相关的Modelica标准库中，是更高的指标系统，只有进行符号指标约简，即微分方程和选择适当的变量作为状态，才能合理地模拟。这样得到的方程组可以转化为状态空间形式(至少在局部数值上)，即指标为零的混合DAE。
+为了允许这种结构分析，如果在翻译过程中参数不能被评估，工具可能会拒绝模拟模型——由于调用外部函数或初始方程/初始算法的 \lstinline!fixed = false! 参数。
+接受这样的模型是一个实现质量问题。
+Modelica规范没有定义如何模拟模型。
+但是，它定义了一组模拟结果应该尽可能满足的方程。
 
-The key issues of the translation (or flattening) are:
+翻译(或扁平化)的关键问题是:
 \begin{itemize}
 \item
-  Expansion of inherited base classes
+  扩展继承的基类
 \item
-  Parameterization of base classes, local classes and components
+  基类、局部类和组件的参数化
 \item
-  Generation of connection equations from \lstinline!connect!-equations
+  从 \lstinline!connect!-equations 生成连接方程
 \end{itemize}
 
-The flat hybrid DAE form consists of:
+扁平混合 DAE 形式包括：
 \begin{itemize}
 \item
-  Declarations of variables with the appropriate basic types, prefixes and attributes, such as \lstinline!parameter Real v = 5!.
+  用适当的基本类型、前缀和属性声明变量，例如 \lstinline!parameter Real v = 5!。
 \item
-  Equations from equation sections.
+  方程部分中的方程。
 \item
-  Function invocations where an invocation is treated as a set of equations which involves all input and all result variables (number of equations = number of basic result variables).
+  函数调用，调用被视为一组方程，其中包括所有输入变量和所有结果变量(方程的数量=基本结果变量的数量)。
 \item
-  Algorithm sections where every section is treated as a set of equations which involves the variables occurring in the algorithm section (number of equations = number of different assigned variables).
+  算法部分，每个部分被视为一组方程，其中涉及到在算法部分中出现的变量(方程的数量=分配的不同变量的数量)。
 \item
-  The \lstinline!when!-clauses where every \lstinline!when!-clause is treated as a set of conditionally evaluated equations, which are functions of the variables occurring in the clause (number of equations = number of different assigned variables).
+  在 \lstinline!when! -子句中，每个 \lstinline!when! -子句都被视为一组条件赋值方程，这些方程是子句中出现的变量的函数(方程的数量=分配的不同变量的数量)。
 \end{itemize}
 
-Therefore, a flat hybrid DAE is seen as a set of equations where some of the equations are only conditionally evaluated.
-Initial setup of the model is specified using \lstinline!start!-attributes and equations that hold only during initialization.
+因此，扁平混合DAE被看作是一组方程，其中一些方程只是有条件地求值。
+模型的初始设置是使用\lstinline!start!-attribute和方程来指定的，它们只在初始化期间成立。
 
-A Modelica class may also contain annotations, i.e.\ formal comments, which specify graphical representations of the class (icon and diagram), documentation text for the class, and version information.
+Modelica类也可以包含注释，即正式的注释，它指定类的图形表示(图标和图)、类的文档文本和版本信息。
 
-\section{Some Definitions}\label{some-definitions}
+\section{有关定义}\label{some-definitions}
 
 Explanations of many terms can be found using the document index in \cref{document-index}.
 Some important terms are defined below.

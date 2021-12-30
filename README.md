@@ -1,16 +1,16 @@
 <img src="https://github.com/modelica/MA-Logos/raw/master/HighRes/Modelica_Language.svg?sanitize=true" width="250px"/>
 
-# ModelicaSpecification
-This repository contains the Modelica Language Specification, hosted at https://github.com/modelica/ModelicaSpecification. Development is organized within the [Modelica Association Project Language (MAP-LANG)](https://modelica.org/projects).
+# Modelica规范
+这个存储库包含Modelica语言规范，托管在https://github.com/modelica/ModelicaSpecification。开发活动由[Modelica Association Project Language (MAP-LANG)](https://modelica.org/projects)组织。
 
-## Description
+## 描述
 
-Modelica® is a language for modeling of cyber-physical systems, supporting acausal connection of components governed by mathematical equations to facilitate modeling from first principles.
-It provides object-oriented constructs that facilitate reuse of models, and can be used conveniently for modeling complex systems containing, e.g., mechanical, electrical, electronic, magnetic, hydraulic, thermal, control, electric power or process-oriented subcomponents.
+Modelica®是一种用于信息物理系统建模的语言，支持由数学方程控制的组件的因果连接，以促进从第一性原理建模。
+它提供了面向对象的结构，便于模型的重用，并且可以方便地用于复杂系统的建模，包括机械、电气、电子、磁性、液压、热、控制、电力或面向过程的子组件。
 
-## Releases
+## 发行
 
-Version | Link                                                              | Published |
+版本    | 链接                                                               | 发行年份 |
 ------- | ----------------------------------------------------------------- | --------|
 3.6-dev | [Master branch](https://github.com/modelica/ModelicaSpecification/tree/master) [HTML](https://specification.modelica.org/master/) [PDF](https://specification.modelica.org/master/MLS.pdf)| not yet |
 3.5 | [3.5 branch](https://github.com/modelica/ModelicaSpecification/tree/maint/3.5) [HTML](https://specification.modelica.org/maint/3.5/MLS.html) [PDF](https://specification.modelica.org/maint/3.5/MLS.pdf)| 2021 |
@@ -31,26 +31,26 @@ Version | Link                                                              | Pu
 1.1     | [PDF](https://modelica.org/documents/ModelicaSpec11.pdf)          | 1998    |
 1.0     | [PDF](https://modelica.org/documents/Modelica1.pdf)               | 1997    |
 
-More Info on released versions: https://www.modelica.org/documents
+发布版本的更多信息: https://www.modelica.org/documents
 
-## Contribution
-1. If you find an error and are not certain that you can correct it, first check that it is not already reported and then open an [issue](https://github.com/modelica/ModelicaSpecification/issues) describing it in detail - focusing on why it should be changed.
-2. If you are confident that you can correct the issue, fork this repository and create a pull-request and in the pull-request explain the issue and the correction; you will also have to sign a CLA.
-3. Significant extensions are handled as Modelica Change Proposals (MCPs). This can start as a simple description of the proposed extension. It will then be worked on to have a rationale explaining how the change help users, and demonstrating that it can be implemented efficiently; and finally a pull-request with the changes.
+## 贡献
+1. 如果你发现一个错误，并且不确定你可以纠正它，首先检查它是否已经报告，然后打开一个[issue](https://github.com/modelica/ModelicaSpecification/issues)详细描述它——重点是为什么应该更改它。
+2. 如果你有信心你可以纠正这个问题，fork这个存储库并创建一个pull-request，在pull-request中解释这个问题和纠正;你还必须签署一份CLA。
+3. 重要的扩展被处理为Modelica变更建议(MCPs)。这可以从对建议的扩展的简单描述开始。然后，它将被用于有一个基本原理来解释更改如何帮助用户，并证明它可以有效地实现;最后是一个带有更改的pull-request。
 
-For more details, see the [Development Process](https://github.com/modelica/ModelicaSpecification/blob/master/RationaleMCP/DevelopmentProcess.md).
-A list of MCPs can be found here: [RationaleMCP](https://github.com/modelica/ModelicaSpecification/tree/master/RationaleMCP).
+有关详细信息，请参见[Development Process](https://github.com/modelica/ModelicaSpecification/blob/master/RationaleMCP/DevelopmentProcess.md)。
+mcp的列表可以在这里找到:[RationaleMCP](https://github.com/modelica/ModelicaSpecification/tree/master/RationaleMCP).
 
-CLA: Contributor's license agreement. (Details to follow.)
+CLA:贡献者的许可协议。(细节如下)
 
-How to edit and generate final documents
-* Read the [style guide](styleguide.md).
-* For online editing you can use www.overleaf.com (details to follow)
-* The pdf-documents are generated with pdflatex, which is part of most LaTeX installations, we used http://miktex.org/download
-* The HTML-documents are generated with LaTeXML. That is more complicated to install - and can optionally be skipped:
-1. First you need perl, we used http://strawberryperl.com/
-2. And then the official LaTeXML package (0.8.5 or later): http://dlmf.nist.gov/LaTeXML/get.html#SS4.SSS0.Px1 or https://github.com/brucemiller/LaTeXML
-3. The exact commands are in the Makefile
+如何编辑和生成最终的文档
+* 阅读[style guide](styleguide.md).
+* 对于在线编辑，您可以使用www.overleaf.com (详情如下)
+* pdf文件是用pdflatex生成的，这是大多数LaTeX安装的一部分，我们使用http://miktex.org/download
+* html文档使用LaTeXML生成。这是更复杂的安装-可以选择跳过:
+1. 首先你需要perl，我们使用http://strawberryperl.com/
+2. 然后是官方的LaTeXML包(0.8.5或更新): http://dlmf.nist.gov/LaTeXML/get.html#SS4.SSS0.Px1 或 https://github.com/brucemiller/LaTeXML
+3. 确切的命令在Makefile中
 
-It is also possible to get a preview in the pull request.
-There will be a link to the [status check](https://test.openmodelica.org/jenkins/job/ModelicaAssociation/job/ModelicaSpecification/view/change-requests/), which checks that the documents can be generated and gives you an option to download them.
+也可以在pull请求中获得预览。
+会有一个链接到[status check](https://test.openmodelica.org/jenkins/job/ModelicaAssociation/job/ModelicaSpecification/view/change-requests/)，它会检查文档是否可以生成，并提供下载选项。
