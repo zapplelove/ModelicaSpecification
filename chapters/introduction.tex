@@ -56,20 +56,19 @@ Modelica类也可以包含注释，即正式的注释，它指定类的图形表
 
 \section{有关定义}\label{some-definitions}
 
-Explanations of many terms can be found using the document index in \cref{document-index}.
-Some important terms are defined below.
+使用 \cref{document-index}中的文档索引可以找到许多术语的解释。
+下面定义了一些重要的术语。
 
 \begin{definition}[Component]\index{component}
-An element defined by the production \lstinline[language=grammar]!component-clause! in the Modelica grammar (basically a variable or an instance of a class)
+Modelica语法中由生产 \lstinline[language=grammar]!组件! 子句定义的元素(基本上是一个变量或一个类的实例)。
 \end{definition}
 
 \begin{definition}[Element]\index{element}
-Class definition, \lstinline!extends!-clause, or \lstinline[language=grammar]!component-clause! declared in a class (basically a class reference or a component in a declaration).
+类定义、 \lstinline!扩展! 子句或 \lstinline[language=grammar]!组件子句! 在类中声明(基本上是类引用或声明中的组件)。
 \end{definition}
 
 \begin{definition}[Flattening]\index{flattening}
-The translation of a model described in Modelica to the corresponding model described as a hybrid DAE, involving expansion of inherited base classes, parameterization of base classes, local classes
-and components, and generation of connection equations from \lstinline!connect!-equations (basically, mapping the hierarchical structure of a model into a set of differential, algebraic and discrete equations together with the corresponding variable declarations and function definitions from the model).
+将Modelica中描述的模型转换为相应的混合DAE模型，涉及继承基类的扩展、基类、局部类和组件的参数化，以及从 \lstinline!connect!-equations 生成连接方程(基本上，将模型的层次结构映射为一组微分方程、代数方程和离散方程，以及相应的模型变量声明和函数定义)。
 \end{definition}
 
 % More terms that would be useful to define here:
@@ -80,10 +79,10 @@ and components, and generation of connection equations from \lstinline!connect!-
 
 \section{Notation}\label{notation}
 
-The remainder of this section shows examples of the presentation used in this document.
+本节的其余部分将展示本文档中使用的演示示例。
 
-Syntax highlighting of Modelica code is illustrated by the code listing below.
-Things to note include keywords that define code structure such as \lstinline!equation!, keywords that do not define code structure such as \lstinline!connect!, and recognized identifiers with meaning defined by the specification such as \lstinline!semiLinear!:
+下面的代码清单演示了Modelica代码的语法高亮显示。
+需要注意的是，定义代码结构的关键字(如 \lstinline!equation!)、不定义代码结构的关键字(如 \lstinline!connect!)，以及由规范定义的具有意义的可识别标识符(如 \lstinline!semiLinear!):
 \begin{lstlisting}[language=modelica]
 model Example "Example used to illustrate syntax highlighting"
   /* The string above is a class description string, this is a comment. */
@@ -97,19 +96,19 @@ equation
 end Example;
 \end{lstlisting}
 
-Relying on implicit conversion of \lstinline!Integer! literals to \lstinline!Real! is common, as seen in the equation above (note use of Modelica code appearing inline in the text).
+依赖于 \lstinline!Integer! 字面值到 \lstinline!Real! 的隐式转换是很常见的，如上面的等式所示(注意在文本中使用了Modelica代码)。
 
-It is common to mix Modelica code with mathematical notation.
-For example, \lstinline!average($x$, $y$)! could be defined as $\frac{x + y}{2}$.
+通常将Modelica代码与数学符号混合使用。
+例如，\lstinline!average($x$, $y$)! 可以定义为 $\frac{x + y}{2}$.
 
 \begin{definition}[Something]% Do not add this one to the index!
 Text defining the meaning of \emph{something}.
 \end{definition}
 
-In addition to the style of definition above, new terminology can be introduced in the running text.
+除了上述定义的风格外，还可以在运行的文本中引入新的术语。
 % TODO: Switch to \firstuse[---]{dummy} below.  For now, using \willintroduce to avoid risk of accidentally
 % creating index entry in the future.
-For example, a \willintroduce{dummy} is something that\ldots
+举例来说，\willintroduce{dummy} 是\ldots
 
 \begin{nonnormative}
 This is non-normative content that provides some explanation, motivation, and/or additional things to keep in mind.
@@ -125,8 +124,8 @@ String s = 1.0; // Error: No conversion form Real to String.
 To fix the type mismatch above, the number has to be replaced by a \lstinline!String! expression, such as \lstinline!"1.0"!.
 \end{example}
 
-Other code listings in the document include specification of lexical units and grammatical structure, both using metasymbols of the extended BNF-grammar defined in~\cref{lexical-conventions}.
-Lexical units are named with all upper-case letters and introduced with the `\lstinline[language=grammar]!=!' sign:
+文档中的其他代码清单包括词汇单位和语法结构的规范，两者都使用在~\cref{lex-conventions}中定义的扩展BNF-grammar的元符号。
+词汇单位以全部大写字母命名，并通过 `\lstinline[language=grammar]!=!' 标示：
 \begin{lstlisting}[language=grammar]
 SOME-TOKEN = NON-DIGIT { DIGIT | NON-DIGIT }
 \end{lstlisting}
